@@ -1,0 +1,4 @@
+<ul>
+  <li *ngFor="let item of testData;index as i">{{item.name}}<button (click)="editName(testData,i)">Edit</button></li>
+</ul>
+<!-- {{testData.name}}  <button (click)="editName(testData)">Edit</button> -->
