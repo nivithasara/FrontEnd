@@ -3,4 +3,4 @@ export interface TestInterface{
     name: string;
     username: string;
     email: string;
-}[];
+};

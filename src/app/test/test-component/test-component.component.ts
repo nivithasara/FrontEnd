@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestInterface } from 'src/app/models/testData';
+import { TestClass } from 'src/app/models/testClass';
 
 @Component({
   selector: 'app-test-component',
@@ -7,28 +8,18 @@ import { TestInterface } from 'src/app/models/testData';
   styleUrls: ['./test-component.component.css']
 })
 export class TestComponentComponent implements OnInit {
-  item: TestInterface;
-  constructor() {  }
-  
-  ngOnInit() {
-  }
-  testData: TestInterface[] = [
-    {
-      id: 1,
-    name: "ABCD",
-    username: "EFGH",
-    email: "abcd@efgh.com"
-    },
-    {
-      id: 2,
-      name: "AD",
-      username: "EGH",
-      email: "ad@efgh.com"
-    }
-    ]
+  x;
+  tdata;
 
-  editName(item,j):void{
-    item[j].name="hiji";
-    console.log(item);
+  constructor() { }
+
+  ngOnInit() {
+    this.x = new TestClass();
+    this.tdata = this.x.testData;
+    console.log(this.tdata);
+  }
+
+  editData(item: TestInterface[]){
+    this.x.editName(item);
   }
 }
